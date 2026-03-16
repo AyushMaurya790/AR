@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AR Consultancy - UAE Business Setup Website
 
 A modern, feature-rich React.js website for AR Consultancy, offering comprehensive UAE business setup services. This is a complete rebuild of the original website with advanced interactive features and professional design.
@@ -202,3 +203,7 @@ This project is created for AR Consultancy. All rights reserved.
 ---
 
 **Created with React.js, Next.js, and Tailwind CSS**
+=======
+# AR
+This project is a full-stack Next.js application powered by MongoDB and styled with Tailwind CSS. It is designed with modern architecture, secure authentication, smooth UI animations, and production-ready integrations such as payments and cloud image storage. The app ensures high scalability, fast performance, and a clean developer experience.
+>>>>>>> d4640e5472fa5e586922338aaf2cbf024ed3312d
