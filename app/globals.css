@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -198,9 +197,90 @@
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(to right, var(--primary), var(--accent));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+}
+
+/* Mobile-first responsive utilities */
+@layer utilities {
+  /* Responsive padding */
+  .responsive-px {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .responsive-py {
+    @apply py-12 sm:py-16 md:py-20;
+  }
+
+  /* Responsive text sizes */
+  .responsive-h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  .responsive-h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold;
+  }
+
+  .responsive-h3 {
+    @apply text-xl sm:text-2xl md:text-3xl font-bold;
+  }
+
+  .responsive-body {
+    @apply text-base sm:text-lg md:text-lg;
+  }
+
+  /* Responsive grid */
+  .responsive-grid-1 {
+    @apply grid grid-cols-1;
+  }
+
+  .responsive-grid-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2;
+  }
+
+  .responsive-grid-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  /* Responsive container */
+  .responsive-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Responsive spacing */
+  .responsive-gap {
+    @apply gap-4 sm:gap-6 md:gap-8;
+  }
+
+  /* Mobile-safe card */
+  .responsive-card {
+    @apply rounded-lg border transition-all duration-300;
+  }
+
+  /* Touch-friendly buttons */
+  .touch-target {
+    @apply min-h-12 min-w-12;
+  }
+
+  /* Responsive sidebar/drawer */
+  @media (max-width: 768px) {
+    .drawer-mobile {
+      @apply fixed inset-0 z-50;
+    }
+  }
+}
+
+/* Mobile viewport fixes */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px; /* Prevent zoom on input focus */
+  }
+
+  /* Ensure touch elements are clickable */
+  button, a, [role="button"] {
+    @apply min-h-10;
+  }
 }
 
 /* Glass effect */
@@ -223,6 +303,28 @@
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .card-hover:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Button ripple effect */

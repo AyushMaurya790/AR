@@ -57,16 +57,16 @@ export default function Hero({ onContactClick }: HeroProps) {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Subtitle */}
-        <div className="flex items-center justify-center gap-2 mb-4 animate-fade-in">
-          <div className="h-px w-12 bg-gradient-to-r from-transparent to-yellow-400"></div>
-          <h2 className="text-lg sm:text-xl font-medium text-yellow-400 tracking-wide uppercase">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-4 animate-fade-in">
+          <div className="hidden sm:block h-px w-12 bg-gradient-to-r from-transparent to-yellow-400"></div>
+          <h2 className="text-sm sm:text-lg sm:text-xl font-medium text-yellow-400 tracking-wide uppercase">
             YOUR TRUSTED PARTNER FOR
           </h2>
-          <div className="h-px w-12 bg-gradient-to-l from-transparent to-yellow-400"></div>
+          <div className="hidden sm:block h-px w-12 bg-gradient-to-l from-transparent to-yellow-400"></div>
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight px-2">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-yellow-100 to-white">
             BUSINESS SETUP
           </span>
@@ -74,15 +74,15 @@ export default function Hero({ onContactClick }: HeroProps) {
           <span className="text-yellow-400">IN UAE</span>
         </h1>
 
-        {/* Benefits Grid */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-10 max-w-4xl mx-auto">
+        {/* Benefits Grid - Responsive 2-3 cols on mobile, wrap on smaller */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 max-w-4xl mx-auto px-2">
           {BENEFITS.map((benefit, index) => (
             <div
               key={index}
-              className="group bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-5 py-2.5 flex items-center gap-2 hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg"
+              className="group bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 sm:px-5 py-2 sm:py-2.5 flex items-center gap-2 hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-lg text-xs sm:text-sm"
             >
-              <span className="text-green-400 text-lg font-bold">✅</span>
-              <span className="text-white text-sm sm:text-base font-medium whitespace-nowrap">{benefit.text}</span>
+              <span className="text-green-400 font-bold">✅</span>
+              <span className="text-white font-medium whitespace-nowrap">{benefit.text}</span>
             </div>
           ))}
         </div>
@@ -92,13 +92,13 @@ export default function Hero({ onContactClick }: HeroProps) {
           <Button
             size="lg"
             onClick={onContactClick}
-            className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold text-lg px-16 py-7 rounded-full shadow-2xl hover:shadow-yellow-500/50 hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold text-sm sm:text-lg px-8 sm:px-16 py-5 sm:py-7 rounded-full shadow-2xl hover:shadow-yellow-500/50 hover:scale-105 transition-all duration-300"
           >
             Get Free Consultation
           </Button>
 
           {/* Bottom Text */}
-          <p className="text-white/90 text-sm sm:text-base flex items-center gap-2">
+          <p className="text-white/90 text-xs sm:text-base flex items-center gap-2">
             <span>🔒</span>
             <span>Free Consultation · 100% Privacy Guaranteed</span>
           </p>
